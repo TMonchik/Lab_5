@@ -1,0 +1,6 @@
+main :- permutation([0,1,2,3],[W,I,A,U]), A is (W+1) mod 4, U is (A+2) mod 4,
+        permutation([flora, sport, space, fauna], [TW, TI, TA, TU]), TW=fauna, TU\=sport,
+        member(P-space, [W-TW, I-TI, A-TA, U-TU]), I is (P+1) mod 4,
+        format("wolf - ~w~nnif - ~w~nnaf - ~w~nnuf - ~w~n", [TW, TI, TA, TU]).
+
+:- initialization(main).
